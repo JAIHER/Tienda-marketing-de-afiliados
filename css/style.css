@@ -1,0 +1,329 @@
+/* Importando fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* Variables de color */
+:root {
+    --color-primary: #0B3D91;     /* Azul NASA profundo */
+    --color-secondary: #1E88E5;   /* Azul tecnológico medio */
+    --color-accent: #00B0FF;      /* Azul brillante para acentos */
+    --color-light: #E3F2FD;       /* Azul muy claro para fondos */
+    --color-dark: #1A237E;        /* Azul oscuro para contraste */
+}
+
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-light);
+}
+
+/* Header y navegación */
+header {
+    background: linear-gradient(to right, var(--color-dark), var(--color-primary));
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+/* Controlar el scroll al utilizar menú de navegación*/
+section{
+   scroll-margin-top: 200px;
+}
+
+/* Sección de inicio */
+#inicio {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.titulo{
+    text-align:center;
+}
+
+#video{
+    width:560px;
+    height:315px;
+}
+
+/* Carrusel de productos */
+.producto {
+    display: flex;
+    align-items: left;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.Carrusel {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.Contenedor_carrusel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.Fotos_carrusel {
+    min-width: 100%;
+}
+
+.Fotos_carrusel img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.Boton_carrusel  {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.Boton_carrusel:hover {
+    opacity: 1;
+}
+
+.Boton_carrusel.anterior {
+    left: 0;
+}
+
+.Boton_carrusel.siguiente {
+    right: 0;
+}
+
+.Informacion_producto {
+    flex: 1;
+    padding: 2rem;
+}
+
+.Informacion_producto h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.Boton_comprar {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: 0.3s;
+}
+
+.Boton_comprar:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Formulario de Contacto */
+#Contacto {
+background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+#Contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#Contacto label {
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+#Contacto input,
+#Contacto textarea {
+    padding: 0.75rem;
+    border: 2px solid var(--color-light);
+    border-radius: 4px;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+#Contacto input:focus,
+#Contacto textarea:focus {
+    border-color: var(--color-accent);
+    outline: none;
+}
+
+#Contacto input[type="submit"] {
+    background: var(--color-secondary);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#Contacto input[type="submit"]:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+#confirm{
+    margin-top: 0.75rem;
+    text-align: center;
+    color: green;
+}
+
+/* Footer */
+footer {
+    background: var(--color-dark);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+#info{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+#info li:nth-child(even){
+    border-left: 3px solid white;
+    margin: 0 0.3rem;
+}
+
+/*Diseño Responsive*/
+
+/*Breakpoint 1024px*/
+@media (max-width: 1024px) {
+    #inicio{
+        flex-direction: column;
+    }
+
+    .Contenedor_video h3{
+        text-align: center;
+    }
+
+    .producto {
+        flex-direction: column;
+    }
+
+    .Carrusel{
+        margin: 0 auto;
+        max-width: 60%;
+    }  
+}
+
+/*Breakpoint 768px*/
+@media (max-width: 768px) {
+    #menu ul{
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    section{
+        scroll-margin-top: 240px;
+    }
+
+    /*Vídeo de guia para comprar por amazon*/
+    #video{
+        width: 450px;
+    }
+
+    .Carrusel{
+        margin: 0 auto;
+        max-width: 80%;
+    }  
+}
+
+/*Breakpoint 480px*/
+@media (max-width: 480px){
+    section{
+        scroll-margin-top: 335px;
+    }
+
+    /*Vídeo de guia para comprar por amazon*/
+    #video{
+        width: 300px;
+        height: 180px;
+    }
+
+    .Carrusel{
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .Boton_comprar{
+        text-align: center;
+    }
+}
